@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    stages {
+        stage('Clone Chaperootodo') {
+            steps {
+                //
+            }
+        }
+        stage('Install Docker/Docker Compose') {
+            steps {
+                //
+            }
+        }
+        stage('Deploy Chaperootodo') {
+            steps {
+                //
+            }
+        }
+    }
+}
