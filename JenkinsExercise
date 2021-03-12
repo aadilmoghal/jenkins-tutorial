@@ -6,8 +6,8 @@ pipeline {
     stages {
         stage('Clone Chaperootodo') {
             steps {
-                    rm -rf "chaperootodo_client"
-                sh "git clone https://gitlab.com/qacdevops/chaperootodo_client"
+                    sh "    rm -rf "chaperootodo_client"
+                 sh "git clone https://gitlab.com/qacdevops/chaperootodo_client"
             }
         }
         stage('Install Docker/Docker Compose') {
@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Deploy Chaperootodo') {
             steps {
-                sh "cd chaperootodo_client && sudo docker-compose pull && sudo -E DB_PASSWORD=${DB_PASSWORD} docker-compose up -d"
+                    sh "cd chaperootodo_client && sudo docker-compose pull && sudo -E DB_PASSWORD=${DB_PASSWORD} docker-compose up -d"
             }
         }
     }
