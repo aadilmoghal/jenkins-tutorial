@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
             DB_PASSWORD = "PASSWORD"
+            }
     stages {
         stage('Clone Chaperootodo') {
             steps {
@@ -19,7 +20,7 @@ pipeline {
         }
         stage('Deploy Chaperootodo') {
             steps {
-                sh "sudo docker-compose pull && sudo -E DB_PASSWORD=${DB_PASSWORD} docker-compose up -d"
+                sh "cd chaperootodo_client && sudo docker-compose pull && sudo -E DB_PASSWORD=${DB_PASSWORD} docker-compose up -d"
             }
         }
     }
